@@ -1,0 +1,222 @@
+{
+    "products": {
+        "list": {
+            "method": "GET",
+            "url": "/api/v1/products",
+            "description": "Lấy danh sách sản phẩm (có hỗ trợ phân trang, lọc và sắp xếp)"
+        },
+        "detail": {
+            "method": "GET",
+            "url": "/api/v1/products/:id",
+            "description": "Lấy chi tiết sản phẩm theo ID"
+        },
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/products",
+            "description": "Tạo sản phẩm mới (chỉ dành cho admin)"
+        },
+        "update": {
+            "method": "PUT",
+            "url": "/api/v1/products/:id",
+            "description": "Cập nhật thông tin sản phẩm (chỉ dành cho admin)"
+        },
+        "delete": {
+            "method": "DELETE",
+            "url": "/api/v1/products/:id",
+            "description": "Xóa sản phẩm (chỉ dành cho admin)"
+        }
+    },
+    "categories": {
+        "list": {
+            "method": "GET",
+            "url": "/api/v1/categories",
+            "description": "Lấy danh sách danh mục sản phẩm"
+        },
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/categories",
+            "description": "Tạo danh mục mới (chỉ dành cho admin)"
+        },
+        "update": {
+            "method": "PUT",
+            "url": "/api/v1/categories/:id",
+            "description": "Cập nhật thông tin danh mục (chỉ dành cho admin)"
+        },
+        "delete": {
+            "method": "DELETE",
+            "url": "/api/v1/categories/:id",
+            "description": "Xóa danh mục (chỉ dành cho admin)"
+        }
+    },
+    "cart": {
+        "view": {
+            "method": "GET",
+            "url": "/api/v1/cart",
+            "description": "Lấy giỏ hàng của người dùng"
+        },
+        "add": {
+            "method": "POST",
+            "url": "/api/v1/cart",
+            "description": "Thêm sản phẩm vào giỏ hàng"
+        },
+        "updateQuantity": {
+            "method": "PUT",
+            "url": "/api/v1/cart/:productId",
+            "description": "Cập nhật số lượng sản phẩm trong giỏ hàng"
+        },
+        "remove": {
+            "method": "DELETE",
+            "url": "/api/v1/cart/:productId",
+            "description": "Xóa sản phẩm khỏi giỏ hàng"
+        }
+    },
+    "orders": {
+        "list": {
+            "method": "GET",
+            "url": "/api/v1/orders",
+            "description": "Lấy danh sách đơn hàng của người dùng (hoặc tất cả đơn hàng nếu là admin)"
+        },
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/orders",
+            "description": "Tạo đơn hàng mới từ giỏ hàng"
+        },
+        "detail": {
+            "method": "GET",
+            "url": "/api/v1/orders/:id",
+            "description": "Lấy chi tiết đơn hàng theo ID"
+        },
+        "updateStatus": {
+            "method": "PUT",
+            "url": "/api/v1/orders/:id/status",
+            "description": "Cập nhật trạng thái đơn hàng (chỉ dành cho admin)"
+        },
+        "cancel": {
+            "method": "DELETE",
+            "url": "/api/v1/orders/:id",
+            "description": "Hủy đơn hàng (cho phép người dùng hủy đơn nếu chưa xử lý)"
+        }
+    },
+    "payments": {
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/payments",
+            "description": "Tạo yêu cầu thanh toán cho một đơn hàng"
+        },
+        "verify": {
+            "method": "POST",
+            "url": "/api/v1/payments/verify",
+            "description": "Xác minh thanh toán"
+        },
+        "view": {
+            "method": "GET",
+            "url": "/api/v1/payments/:orderId",
+            "description": "Lấy thông tin thanh toán của đơn hàng"
+        }
+    },
+    "auth": {
+        "register": {
+            "method": "POST",
+            "url": "/api/v1/auth/register",
+            "description": "Đăng ký tài khoản mới"
+        },
+        "login": {
+            "method": "POST",
+            "url": "/api/v1/auth/login",
+            "description": "Đăng nhập và tạo token xác thực"
+        },
+        "profile": {
+            "method": "GET",
+            "url": "/api/v1/auth/profile",
+            "description": "Lấy thông tin cá nhân của người dùng"
+        },
+        "updateProfile": {
+            "method": "PUT",
+            "url": "/api/v1/auth/profile",
+            "description": "Cập nhật thông tin cá nhân của người dùng"
+        },
+        "logout": {
+            "method": "POST",
+            "url": "/api/v1/auth/logout",
+            "description": "Đăng xuất người dùng và hủy token xác thực"
+        }
+    },
+    "reviews": {
+        "list": {
+            "method": "GET",
+            "url": "/api/v1/products/:id/reviews",
+            "description": "Lấy danh sách đánh giá của sản phẩm"
+        },
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/products/:id/reviews",
+            "description": "Thêm đánh giá mới cho sản phẩm"
+        },
+        "update": {
+            "method": "PUT",
+            "url": "/api/v1/products/:id/reviews/:reviewId",
+            "description": "Cập nhật đánh giá"
+        },
+        "delete": {
+            "method": "DELETE",
+            "url": "/api/v1/products/:id/reviews/:reviewId",
+            "description": "Xóa đánh giá"
+        }
+    },
+    "coupons": {
+        "apply": {
+            "method": "POST",
+            "url": "/api/v1/coupons/apply",
+            "description": "Áp dụng mã giảm giá cho giỏ hàng"
+        },
+        "list": {
+            "method": "GET",
+            "url": "/api/v1/coupons",
+            "description": "Lấy danh sách mã giảm giá (chỉ dành cho admin)"
+        },
+        "create": {
+            "method": "POST",
+            "url": "/api/v1/coupons",
+            "description": "Tạo mã giảm giá mới (chỉ dành cho admin)"
+        },
+        "delete": {
+            "method": "DELETE",
+            "url": "/api/v1/coupons/:id",
+            "description": "Xóa mã giảm giá (chỉ dành cho admin)"
+        }
+    },
+    "admin": {
+        "orders": {
+            "method": "GET",
+            "url": "/api/v1/admin/orders",
+            "description": "Lấy danh sách tất cả đơn hàng (phân quyền cho admin)"
+        },
+        "users": {
+            "method": "GET",
+            "url": "/api/v1/admin/users",
+            "description": "Quản lý người dùng"
+        },
+        "analytics": {
+            "method": "GET",
+            "url": "/api/v1/admin/analytics",
+            "description": "Thống kê doanh thu, số lượng bán hàng, người dùng mới, v.v."
+        }
+    },
+    "support": {
+        "createTicket": {
+            "method": "POST",
+            "url": "/api/v1/support/tickets",
+            "description": "Tạo yêu cầu hỗ trợ từ khách hàng"
+        },
+        "listTickets": {
+            "method": "GET",
+            "url": "/api/v1/support/tickets",
+            "description": "Lấy danh sách ticket (chỉ dành cho admin)"
+        },
+        "updateTicket": {
+            "method": "PUT",
+            "url": "/api/v1/support/tickets/:id",
+            "description": "Cập nhật trạng thái ticket hỗ trợ (chỉ dành cho admin)"
+        }
+    }
+}
