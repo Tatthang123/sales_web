@@ -10,6 +10,7 @@ import routerUserapi from './router/userRouter.js';
 import routerProductapi from './router/productRouter.js';
 import routerCategoryapi from './router/categoryRouter.js';
 import routerCartapi from './router/cartRouter.js';
+import routerUpload from './router/fileRouter.js';
 const app = express()
 app.use(cors());
 app.use(express.json());
@@ -27,6 +28,7 @@ app.use("/api/v1", routerUserapi)
 app.use("/api/v1", routerProductapi)
 app.use("/api/v1", routerCategoryapi)
 app.use("/api/v1", routerCartapi)
+app.use("/api/v1", routerUpload)
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

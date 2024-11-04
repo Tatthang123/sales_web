@@ -7,4 +7,4 @@ routerCategoryapi.post("/category/create", asyncHandler(categoryController.creat
 routerCategoryapi.get("/category/parent/:id", asyncHandler(categoryController.getCatebyparent));
 routerCategoryapi.get("/category", asyncHandler(categoryController.getAll));
 routerCategoryapi.get("/category/parent", asyncHandler(categoryController.getParentcategory));
-export default routerCategoryapi;
+export default routerCategoryapi; 
